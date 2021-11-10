@@ -1,0 +1,21 @@
+.bg-top{
+    background-color: #242694f1;
+    color: white;
+    width: 100%;
+}
+.contact{
+    text-decoration: none;
+    color: white;
+    vertical-align: middle;
+}
+.contact:hover{
+    color: darkorange;
+}
+.icon-body{
+    color:white;
+}
+.icon-body:hover{
+    color: white;
+}
+
+    
