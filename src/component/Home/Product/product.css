@@ -1,0 +1,14 @@
+.card-btn {
+    background-color: #ffa601d0;
+    border-radius: 5px;
+    border: none;
+    width: 150px;
+    
+    }
+    .buy-now{
+        text-decoration: none;
+       
+    }
+   .card-btn:hover{
+       background-color: tomato;
+   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../../shared/Header/Header';
 import Banner from '../Banner/Banner';
+import Products from '../Products/Products';
 import TopHeader from '../TopHeader/TopHeader';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
             <TopHeader />
             <Header />
             <Banner />
+            <Products />
         </div>
     );
 };

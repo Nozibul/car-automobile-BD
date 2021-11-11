@@ -5,6 +5,9 @@ import {
   Route
 } from "react-router-dom";
 import Home from './component/Home/Home/Home';
+import Explore from './component/Explore/Explore';
+import Contact from './component/Contact/Contact';
+import Header from './shared/Header/Header';
 
 function App() {
   return (
@@ -16,6 +19,14 @@ function App() {
           </Route>
           <Route exact path="/home">
               <Home></Home>
+          </Route>
+          <Route exact path="/explore">
+              <Header />
+              <Explore />
+          </Route>
+          <Route exact path="/contact">
+              <Header />
+              <Contact />
           </Route>
         </Switch>
       </Router>
