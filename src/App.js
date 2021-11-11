@@ -8,6 +8,9 @@ import Home from './component/Home/Home/Home';
 import Explore from './component/Explore/Explore';
 import Contact from './component/Contact/Contact';
 import Header from './shared/Header/Header';
+import Login from './shared/Login/Login';
+import Register from './shared/Register/Register';
+import TopHeader from './component/Home/TopHeader/TopHeader';
 
 function App() {
   return (
@@ -23,6 +26,14 @@ function App() {
           <Route exact path="/explore">
               <Header />
               <Explore />
+          </Route>
+          <Route exact path="/login">
+              <Header />
+              <Login />
+          </Route>
+          <Route exact path="/register">
+               <TopHeader />
+              <Register />
           </Route>
           <Route exact path="/contact">
               <Header />

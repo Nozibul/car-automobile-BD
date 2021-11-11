@@ -17,6 +17,7 @@ const Header = () => {
                         <Nav.Link as={NavLink} className="text-light  fw-bolder"  to="/home">Home</Nav.Link>
                         <Nav.Link as={NavLink} className="text-light  fw-bolder" to="/explore">Explore</Nav.Link>
                         <Nav.Link as={NavLink} className="text-light  fw-bolder" to="/contact"> Contact </Nav.Link>
+                        <Nav.Link as={NavLink} className="text-light  fw-bolder" to="/login"> Login </Nav.Link>
 
                        
                        {/* {
