@@ -3,17 +3,19 @@ import { Link } from 'react-router-dom';
 import './login.css'
 import img from '../../images/slider1.jpg'
 const Login = () => {
-    const [loginData, setLoginData] = useState('') 
+    const [loginData, setLoginData] = useState({}) 
 
     const handleOnChange = e =>{
         const field = e.target.name;
         const value = e.target.value ;
         const newData = {...loginData}
         newData[field]= value
+
         setLoginData(newData);
     }
 
     const handleSubmitLogin = e =>{
+        console.log(loginData)
        e.preventDefault()
     }
   
@@ -27,8 +29,8 @@ const Login = () => {
            <h3 className="fw-bolder mt-2 text-white">Login</h3> 
               <div className="form">
               <form  onSubmit={handleSubmitLogin}>
-                <input onChange={handleOnChange} className="input-area" name="email" type="email" placeholder="email" /> <br />
-                <input onChange={handleOnChange} className="input-area mt-2" name="password" type="password"   placeholder="password" /> <br />
+                <input onBlur={handleOnChange} className="input-area" name="email" type="email" placeholder="email" /> <br />
+                <input onBlur={handleOnChange} className="input-area mt-2" name="password" type="password"   placeholder="password" /> <br />
                     <input className="input-submit mt-3"  type="submit" value="login" />
                 </form>
                 <div className="text-white">-----------------------OR-----------------------</div>
