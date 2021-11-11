@@ -11,10 +11,12 @@ import Header from './shared/Header/Header';
 import Login from './shared/Login/Login';
 import Register from './shared/Register/Register';
 import TopHeader from './component/Home/TopHeader/TopHeader';
+import AuthProvider from './component/context/AuthProvider';
 
 function App() {
   return (
     <div className="App">
+     <AuthProvider>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -41,6 +43,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      </AuthProvider> 
     </div>
   );
 }

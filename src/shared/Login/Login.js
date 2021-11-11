@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './login.css'
+import {  Spinner } from 'react-bootstrap';
 import img from '../../images/slider1.jpg'
+import useAuth from '../../component/Hooks/useAuth';
+
 const Login = () => {
     const [loginData, setLoginData] = useState({}) 
+
+   const {user, isLoading, createLoginUser} = useAuth()
 
     const handleOnChange = e =>{
         const field = e.target.name;
@@ -15,7 +20,8 @@ const Login = () => {
     }
 
     const handleSubmitLogin = e =>{
-        console.log(loginData)
+        alert('User create successfully')
+        createLoginUser(loginData?.email, loginData?.password)
        e.preventDefault()
     }
   
@@ -27,7 +33,7 @@ const Login = () => {
            </div>
            <div className="col-lg-6 text-center login">
            <h3 className="fw-bolder mt-2 text-white">Login</h3> 
-              <div className="form">
+           {!isLoading && <div className="form">
               <form  onSubmit={handleSubmitLogin}>
                 <input onBlur={handleOnChange} className="input-area" name="email" type="email" placeholder="email" /> <br />
                 <input onBlur={handleOnChange} className="input-area mt-2" name="password" type="password"   placeholder="password" /> <br />
@@ -37,7 +43,8 @@ const Login = () => {
                 <button className="input-submit" >Google Sign In</button>
                 <p className="text-white fw-bolder mt-2">New User?<Link className="text-dark fw-bolder" to="/register"> Please Register</Link></p>
     
-              </div>
+              </div> }      
+                  {isLoading && <Spinner animation="grow" variant="danger" />}
            </div>
        </div>
        
