@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useLocation, useHistory } from 'react-router-dom';
 import './login.css'
 import {  Spinner } from 'react-bootstrap';
 import img from '../../images/slider1.jpg'
@@ -8,7 +8,10 @@ import useAuth from '../../component/Hooks/useAuth';
 const Login = () => {
     const [loginData, setLoginData] = useState({}) 
 
-   const {user, isLoading, createLoginUser} = useAuth()
+   const {signInWithGoogle, isLoading, createLoginUser} = useAuth()
+
+   const location = useLocation()
+   const history = useHistory()
 
     const handleOnChange = e =>{
         const field = e.target.name;
@@ -20,9 +23,14 @@ const Login = () => {
     }
 
     const handleSubmitLogin = e =>{
-        alert('User create successfully')
-        createLoginUser(loginData?.email, loginData?.password)
+        alert('Login successfully')
+        createLoginUser(loginData?.email, loginData?.password, location, history)
        e.preventDefault()
+    }
+
+    // google sign in
+    const handleGoogleSignIn = () =>{
+        signInWithGoogle(location, history)
     }
   
     return (
@@ -40,7 +48,7 @@ const Login = () => {
                     <input className="input-submit mt-3"  type="submit" value="login" />
                 </form>
                 <div className="text-white">-----------------------OR-----------------------</div>
-                <button className="input-submit" >Google Sign In</button>
+                <button onClick={handleGoogleSignIn} className="input-submit" >Google Sign In</button>
                 <p className="text-white fw-bolder mt-2">New User?<Link className="text-dark fw-bolder" to="/register"> Please Register</Link></p>
     
               </div> }      

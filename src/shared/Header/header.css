@@ -4,33 +4,31 @@
 }
 
 .logo{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     text-align: center;
 }
 .bg{
     color: white;
 }
-/* .login-btn{
-   background-color: #ffa601ed;
-   border: 1px solid gray;
-   padding: 3px 5px;
-   border-radius: 10px;
+.login-btn{
+    background-color: #1538aced;
+   /* padding: 3px 5px; */
+   border-radius: 5px;
    
-} */
-/* .logout-btn{
-   background-color: #ffa601ed;
-   border: 1px solid gray;
-   padding: 3px 5px;
-   border-radius: 10px;
+} 
+.logout-btn{
+   background-color: #1538aced;
+   /* padding: 0px 5px; */
+   border-radius: 5px;
    
 }
 .login-btn:hover{
-    background-color: tomato;
+    background-color: #1538ac81;
     
 }
 .logout-btn:hover{
     background-color: tomato;
     
-} */
+}

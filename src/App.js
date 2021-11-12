@@ -12,6 +12,8 @@ import Login from './shared/Login/Login';
 import Register from './shared/Register/Register';
 import TopHeader from './component/Home/TopHeader/TopHeader';
 import AuthProvider from './component/context/AuthProvider';
+import PrivateRoute from './shared/PrivateRoute';
+import PlaceOrder from './component/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -25,22 +27,27 @@ function App() {
           <Route exact path="/home">
               <Home></Home>
           </Route>
-          <Route exact path="/explore">
+          <Route  path="/explore">
               <Header />
               <Explore />
           </Route>
-          <Route exact path="/login">
+          <Route  path="/login">
               <Header />
               <Login />
           </Route>
-          <Route exact path="/register">
+          <Route  path="/register">
                <TopHeader />
               <Register />
           </Route>
-          <Route exact path="/contact">
+          <Route  path="/contact">
               <Header />
               <Contact />
           </Route>
+         <Route path="/order/:id">
+              <Header />
+              <PlaceOrder />
+         </Route>
+          
         </Switch>
       </Router>
       </AuthProvider> 

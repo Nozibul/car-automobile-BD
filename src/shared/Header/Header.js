@@ -20,7 +20,8 @@ const Header = () => {
                         <Nav.Link as={NavLink} className="text-light  fw-bolder" to="/explore">Explore</Nav.Link>
                         <Nav.Link as={NavLink} className="text-light  fw-bolder" to="/contact"> Contact </Nav.Link>
                        
-                       
+                        {user?.email && <p className="mt-2 ms-4 me-2 text-warning fw-bolder ">{user?.displayName}</p>}
+
                         {
                           user?.email ? <Button className="login-btn" onClick={logOut}>LogOut</Button> 
                           : <Nav.Link as={NavLink} className="text-dark  fw-bolder" to="/login"><Button className="login-btn">Login</Button></Nav.Link>

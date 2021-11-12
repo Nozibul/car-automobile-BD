@@ -1,0 +1,35 @@
+.add-order{
+    background-color: rgb(138, 38, 88);
+    height: 380px;
+
+}
+.add-order form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+
+   
+}
+ .add-order form input {
+     margin-top: 10px;
+     width: 80%;
+     border-radius: 10px;
+     padding: 5px;
+     border: none;
+    
+ }
+ .order-submit{
+     margin-top: 20px;
+     font-weight: 700;
+     background-color: rgb(8, 90, 50);
+     color: white;
+
+ }
+ .order-submit:hover{
+    background-color: chocolate;
+    font-size:20px ;
+    color: white;
+ }
