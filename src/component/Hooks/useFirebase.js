@@ -26,6 +26,9 @@
               const newUser = {email, displayName: name}
               setUser(newUser)
 
+              // save user to database
+               saveUserToDatabase(email, name, 'POST') 
+
               // send name to firebase 
               updateProfile(auth.currentUser, {
                 displayName: name
@@ -69,8 +72,8 @@
     .then((result) => {
       setError('')
       const user= (result.user) 
+    saveUserToDatabase(user?.email, user?.displayName, 'PUT')
       setUser(user)
-      // saveUserToDatabase(user?.email, user?.displayName, 'PUT')
 
       history.replace(location?.state?.from || '/' )
       
@@ -91,7 +94,7 @@
             setIsLoading(false)
           });
           return () => unsubscribe ;
-    },[])
+    },[auth])
 
 
        // sign in user
@@ -105,6 +108,20 @@
           })
           .finally(()=>setIsLoading(false));
        } 
+
+
+       // save user to database
+       const saveUserToDatabase = (email, displayName, method)=>{
+         const user = {email, displayName }
+           fetch('http://localhost:5000/users',{
+             method: method,
+             headers:{
+               'content-type':'application/json'
+             },
+             body: JSON.stringify(user)
+           })
+           .then()
+       }
     
     return {
         user, createRegisterUser ,createLoginUser,signInWithGoogle,isLoading,logOut, error

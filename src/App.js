@@ -12,8 +12,9 @@ import Login from './shared/Login/Login';
 import Register from './shared/Register/Register';
 import TopHeader from './component/Home/TopHeader/TopHeader';
 import AuthProvider from './component/context/AuthProvider';
-import PrivateRoute from './shared/PrivateRoute';
+// import PrivateRoute from './shared/PrivateRoute';
 import PlaceOrder from './component/PlaceOrder/PlaceOrder';
+import Dashboard from './component/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -46,6 +47,10 @@ function App() {
          <Route path="/order/:id">
               <Header />
               <PlaceOrder />
+         </Route>
+         <Route path="/dashboard">
+              <Header />
+              <Dashboard />
          </Route>
           
         </Switch>

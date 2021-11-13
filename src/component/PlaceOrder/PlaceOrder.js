@@ -72,10 +72,10 @@ const PlaceOrder = () => {
            <div className=" col-lg-4 add-order">
             <h4 className="text-center fs-bolder text-white p-3">Purchase</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input  defaultValue={user.displayName} {...register("name", { required: true })} placeholder="your name" />
+                <input defaultValue={user.displayName} {...register("name", { required: true })} placeholder="your name" />
                 <input defaultValue={user.email}{...register("email", { required: true })} placeholder="email" />
                 <input  {...register("address", { required: true})} placeholder="your address" />
-                <input type="number" {...register("price")} placeholder="phone number" />
+                <input type="number" {...register("phone")} placeholder="phone number" />
 
                 <input className="order-submit" type="submit" />
             </form>

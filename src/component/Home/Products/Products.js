@@ -14,7 +14,7 @@ const Products = () => {
               <h1 className="fw-bolder text-center" style={{color:"green"}}> LUXURY <span className="bd-title">CAR's</span></h1>
             <div className="row pb-5">
                     {
-                            products.slice(0, 6)?.map((product, index) => <Product
+                            products?.slice(0, 6).map((product, index) => <Product
                             product={product} 
                             key={index}    
                             >

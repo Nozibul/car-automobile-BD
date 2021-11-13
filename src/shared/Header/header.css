@@ -12,23 +12,15 @@
 .bg{
     color: white;
 }
-.login-btn{
+.btn-login{
     background-color: #1538aced;
-   /* padding: 3px 5px; */
    border-radius: 5px;
    
 } 
-.logout-btn{
-   background-color: #1538aced;
-   /* padding: 0px 5px; */
-   border-radius: 5px;
-   
-}
-.login-btn:hover{
+
+.btn-login:hover{
     background-color: #1538ac81;
     
 }
-.logout-btn:hover{
-    background-color: tomato;
-    
-}
+
+
