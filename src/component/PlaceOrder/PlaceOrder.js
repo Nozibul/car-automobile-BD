@@ -80,7 +80,9 @@ const PlaceOrder = () => {
                 <input type="number" {...register("phone")} placeholder="phone number" />
 
                 <input className="order-submit" type="submit" />
+
             </form>
+
         </div>
        </div>
     );

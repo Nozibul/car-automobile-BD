@@ -12,6 +12,25 @@ const MyOrder = () => {
         .then(res=>res.json())
         .then(data=>setMyOrder(data))
     },[myOrder])
+
+    // DELETE api
+   const handleDelete = id =>{
+       const url = `http://localhost:5000/deleteOrder/${id}`
+       fetch(url,{
+           method: 'DELETE' 
+        
+       })
+       .then(res=>res.json())
+       .then(data=>{
+           if(data.deletedCount){
+            window.confirm('Delete Confirm...???')
+            const remaining = myOrder.filter(orders=> orders._id !== id)
+            setMyOrder(remaining)
+           }
+           
+       })
+   }
+
     return (
         <div>
             
@@ -23,6 +42,7 @@ const MyOrder = () => {
                         <th>Client Name</th>
                         <th>Address</th>
                         <th>Phone Number</th>
+                        <th>Order Cancel</th>
                     </tr>
                 </thead>
                 <tbody>     
@@ -38,6 +58,9 @@ const MyOrder = () => {
                             </td>
                             <td>
                                 {order?.phone} 
+                            </td>
+                            <td>
+                               <button onClick={()=>handleDelete(order?._id)} className="bg-danger text-white border rounded-3">cancel</button>
                             </td>
                        
                         </tr>

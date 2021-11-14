@@ -50,9 +50,9 @@ const Dashboard = () => {
                     <Link to={`${url}/makeAdmin`}>
                       <li className="dashboard-menu mt-3">Make Admin</li>
                     </Link>
-                    <Link to={`${url}/addProduct`}>
+                    {/* <Link to={`${url}/addProduct`}>
                       <li className="dashboard-menu mt-3">Add A Product</li>
-                    </Link>
+                    </Link> */}
                     <Link to={`${url}/manageProducts`}>
                       <li className="dashboard-menu mt-3">Manage Products</li>
                     </Link>
@@ -80,10 +80,10 @@ const Dashboard = () => {
               <Route path={`${path}/makeAdmin`}>
                 <MakeAdmin></MakeAdmin>
              </Route>
-             <Route path={`${path}/addProduct`}>
+             {/* <Route path={`${path}/addProduct`}>
                <AddProduct />
-             </Route>
-             <Route exact path={`${path}/addProduct`}>
+             </Route> */}
+             <Route exact path={`${path}/manageProducts`}>
               <ManageProducts />
              </Route>
              
