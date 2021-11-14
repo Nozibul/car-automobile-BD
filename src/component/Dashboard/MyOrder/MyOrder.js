@@ -7,7 +7,7 @@ const MyOrder = () => {
     const [myOrder, setMyOrder] =useState()
 
     useEffect(()=>{
-        const url = `http://localhost:5000/order?email=${user.email}`
+        const url = `http://localhost:5000/order?email=${user?.email}`
         fetch(url)
         .then(res=>res.json())
         .then(data=>setMyOrder(data))

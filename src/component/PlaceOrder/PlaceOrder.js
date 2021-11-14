@@ -6,18 +6,20 @@ import useAuth from '../Hooks/useAuth';
 import './placeOrder.css'
 
 const PlaceOrder = () => {
-    let { id} = useParams();
+    const { id} = useParams();
+    console.log(id)
     const {user} = useAuth()
 
     const [details, setDetails] = useState([])
+
     useEffect(()=>{
         fetch('http://localhost:5000/products')
         .then(res=> res.json())
         .then(data=>setDetails(data))
     },[])
 
-        const productDetail= details.filter(detail=> detail._id === id );
-
+        const productDetail= details?.filter(detail=> detail?._id === id );
+        
 
      // order part  
      const { register, handleSubmit, reset } = useForm();
@@ -37,8 +39,8 @@ const PlaceOrder = () => {
      .then(res=>res.json())
      .then(data=>{
         if(data.insertedId){
-            // <Alert key={1} variant="success">check it out!</Alert> 
-            alert('Order Successfully')
+            // <Alert variant="success">Order Successfully</Alert> 
+            alert('Order successfully ')
             reset()
         }
      })
@@ -52,7 +54,7 @@ const PlaceOrder = () => {
               <div className="row col-sm-12">
                  {
                     productDetail?.map(detail=>(
-                        <div key={detail.title} className="container pt-4 mt-5 d-flex justify-content-center align-items-center">
+                        <div key={detail.title} className="container  pt-4 mt-5 d-flex justify-content-center align-items-center">
                            <div className=" m-4">  
                                <img height="220px" src={detail.image} alt="" />
                             </div>

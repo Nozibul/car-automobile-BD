@@ -4,6 +4,7 @@ import './login.css'
 import {  Spinner } from 'react-bootstrap';
 import img from '../../images/slider1.jpg'
 import useAuth from '../../component/Hooks/useAuth';
+import Header from '../Header/Header';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({}) 
@@ -34,7 +35,8 @@ const Login = () => {
     }
   
     return (
-      
+     <div> 
+         <Header></Header>
        <div className="container-fluid row g-2 ">
            <div className="col-lg-6">
               <img className="login-img" src={img} alt="" />
@@ -55,7 +57,7 @@ const Login = () => {
                   {isLoading && <Spinner animation="grow" variant="danger" />}
            </div>
        </div>
-       
+       </div> 
     );
 };
 

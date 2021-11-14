@@ -16,6 +16,7 @@
         const [user, setUser] = useState({})
         const [isLoading, setIsLoading] = useState(true)
         const [error, setError] = useState("")
+        const [admin, setAdmin]= useState('')
     
 
         // get register user
@@ -72,10 +73,10 @@
     .then((result) => {
       setError('')
       const user= (result.user) 
-    saveUserToDatabase(user?.email, user?.displayName, 'PUT')
+      saveUserToDatabase(user?.email, user?.displayName, 'PUT')
       setUser(user)
 
-      history.replace(location?.state?.from || '/' )
+      history.push(location?.state?.from || '/' )
       
     }).catch((error) => {
       setError(error.message);
@@ -95,6 +96,15 @@
           });
           return () => unsubscribe ;
     },[auth])
+
+
+     //  load admin 
+     useEffect(()=>{
+       fetch(`http://localhost:5000/users/${user?.email}`)
+       .then(res=>res.json())
+       .then(data=>setAdmin(data?.admin))
+     },[user?.email])
+
 
 
        // sign in user
@@ -124,7 +134,7 @@
        }
     
     return {
-        user, createRegisterUser ,createLoginUser,signInWithGoogle,isLoading,logOut, error
+        user, createRegisterUser ,createLoginUser,signInWithGoogle,isLoading,logOut, error , admin
     }
   }
 export default useFirebase ;

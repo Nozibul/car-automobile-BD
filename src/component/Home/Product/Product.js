@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import './product.css'
 
 const Product = ({product}) => {
@@ -17,9 +17,9 @@ const Product = ({product}) => {
                     <h5 className="text-center fw-bolder ">Price: ${price}</h5> 
                 </div>
                 
-                    <NavLink to={`/order/${_id}`} className="buy-now " >
+                    <Link to={`/order/${_id}`} className="buy-now " >
                         <button className="card-btn w-75 rounded-pill shadow border border-warning p-1 fs-5 text-light bg-success fw-bolder mx-auto">Buy Now</button>
-                    </NavLink>
+                    </Link>
             </div>
            
         </div>

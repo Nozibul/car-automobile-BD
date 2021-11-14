@@ -21,3 +21,31 @@
     font-size: 34px;
 
 }
+
+@keyframes AnimationTitle {
+    0% {
+      opacity: 0;
+      transform: translateX(400px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px);
+    }
+  }
+  .animation-title {
+    animation: AnimationTitle 3s ease-in;
+  }
+
+  @keyframes AnimationText {
+    0% {
+      opacity: 0;
+      transform: translateX(-400px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0px);
+    }
+  }
+  .animation-text {
+    animation: AnimationText 3s ease-in;
+  }

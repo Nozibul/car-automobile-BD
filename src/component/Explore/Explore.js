@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import Header from '../../shared/Header/Header';
 
 const Explore = () => {
    const [explores, setExplores] = useState([])
@@ -9,6 +10,8 @@ const Explore = () => {
         .then(data=>setExplores(data))
     },[])
     return (
+      <div>  
+          <Header />
         <div className="container-fluid">
             <h1 className="fw-bolder text-center mt-3" style={{color:"green"}}> More <span className="bd-title">CAR's</span> Collection</h1>
             <div className="row pb-5">
@@ -26,7 +29,7 @@ const Explore = () => {
                                             <h5 className="text-center fw-bolder ">Price: ${explore.price}</h5> 
                                         </div>
                                         
-                                            <NavLink to={`/explore/${explore._id}`} className="buy-now " >
+                                            <NavLink to={`/order/${explore._id}`} className="buy-now " >
                                                 <button className="card-btn w-75 rounded-pill shadow border border-warning p-1 fs-5 text-light bg-success fw-bolder mx-auto">Buy Now</button>
                                             </NavLink>
                                     </div>
@@ -37,6 +40,7 @@ const Explore = () => {
                     }
             </div>
         </div>
+     </div> 
     );
 };
 
