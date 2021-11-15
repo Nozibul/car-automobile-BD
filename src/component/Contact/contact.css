@@ -1,0 +1,25 @@
+.contact-body{
+    background-image: linear-gradient(#214977, #35357e);
+    padding: 20px;
+}
+.contact-img{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    /* border: 2px solid gray; */
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    /* padding:50px */
+}
+.contact-card{
+    background-color:rgb(121, 72, 16) ;
+    color: white;
+   padding: 50px;
+   margin: 30px 20px;
+   border-radius: 20px;
+}
+.contact-card:hover{
+  background-color: rgba(14, 34, 99, 0.486);
+  color:white;
+}

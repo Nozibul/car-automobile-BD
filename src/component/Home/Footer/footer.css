@@ -1,0 +1,27 @@
+
+.footer{
+  
+    padding-top: 70px;
+    background-color: #090531;
+}
+h4{
+    color: #20bdd1;
+}
+.footer li{
+    color: whitesmoke;
+    list-style: none;
+    margin-top: 10px;
+}
+.fab{
+    color: white;
+    font-size: 25px;
+    margin: 10px;
+   
+}
+.fas{
+    color: white;
+    font-size: 25px;
+    /* margin: 10px; */
+    margin-left: 20px ;
+   
+}

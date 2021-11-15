@@ -1,11 +1,10 @@
 import React from "react";
-import { Switch, Route, Link, useRouteMatch,useHistory } from "react-router-dom";
+import { Switch, Link, useRouteMatch } from "react-router-dom";
 import "./dashboard.css";
 import MyOrder from "../MyOrder/MyOrder";
 import Review from "../Review/Review";
 import Pay from "../Pay/Pay";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
-import AddProduct from "../AddProduct/AddProduct";
 import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
 import ManageProducts from "../ManageProducts/ManageProducts";
 import useAuth from "../../Hooks/useAuth";
@@ -15,10 +14,7 @@ import LoginRoute from "../../../shared/LoginRoute/LoginRoute";
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
   const { admin, logOut, user } = useAuth();
-  console.log(admin, user.email,'user /n');
-  const Some = user ? user.email : 0;
 
-  const history = useHistory();
 
   return (
     <div className="container-fluid">
@@ -41,7 +37,7 @@ const Dashboard = () => {
                       <li className="dashboard-menu mt-3">Pay</li>
                     </Link>
                     {user?.email && (
-                      <Button className="btn-login mt-5" onClick={()=>logOut(history)}>
+                      <Button className="btn-login mt-5" onClick={logOut}>
                         Logout
                       </Button>
                     )}
@@ -56,13 +52,9 @@ const Dashboard = () => {
                     <Link to={`${url}/manageAllOrders`}>
                       <li className="dashboard-menu mt-3">Manage All Orders</li>
                     </Link>
-
                     <Link to={`${url}/makeAdmin`}>
                       <li className="dashboard-menu mt-3">Make Admin</li>
                     </Link>
-                    {/* <Link to={`${url}/addProduct`}>
-                      <li className="dashboard-menu mt-3">Add A Product</li>
-                    </Link> */}
                     <Link to={`${url}/manageProducts`}>
                       <li className="dashboard-menu mt-3">Manage Products</li>
                     </Link>
@@ -93,9 +85,6 @@ const Dashboard = () => {
               <AdminRoute path={`${path}/makeAdmin`}>
                 <MakeAdmin></MakeAdmin>
               </AdminRoute>
-              {/* <Route path={`${path}/addProduct`}>
-               <AddProduct />
-             </Route> */}
               <AdminRoute exact path={`${path}/manageProducts`}>
                 <ManageProducts />
               </AdminRoute>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Alert } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
@@ -7,7 +6,6 @@ import './placeOrder.css'
 
 const PlaceOrder = () => {
     const { id} = useParams();
-    console.log(id)
     const {user} = useAuth()
 
     const [details, setDetails] = useState([])
