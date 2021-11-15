@@ -5,14 +5,14 @@ const ManageProducts = () => {
   const [deleteProduct, setDeleteProduct] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://rocky-fjord-43160.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setManageProduct(data));
   }, [deleteProduct]);
 
   // DELETE api
   const handleDeleteProduct = (id) => {
-    const url = `http://localhost:5000/products/${id}`;
+    const url = `https://rocky-fjord-43160.herokuapp.com/products/${id}`;
     fetch(url, {
       method: "DELETE",
     })

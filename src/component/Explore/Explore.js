@@ -6,7 +6,7 @@ import Footer from "../Home/Footer/Footer";
 const Explore = () => {
   const [explores, setExplores] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://rocky-fjord-43160.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setExplores(data));
   }, []);

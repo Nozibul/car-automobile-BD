@@ -11,7 +11,7 @@ const PlaceOrder = () => {
     const [details, setDetails] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://rocky-fjord-43160.herokuapp.com/products')
         .then(res=> res.json())
         .then(data=>setDetails(data))
     },[])
@@ -25,7 +25,7 @@ const PlaceOrder = () => {
     //    console.log(order)
          
      // data send to the server
-     fetch('http://localhost:5000/order', {
+     fetch('https://rocky-fjord-43160.herokuapp.com/order', {
        
       method:'POST',
       headers:{
