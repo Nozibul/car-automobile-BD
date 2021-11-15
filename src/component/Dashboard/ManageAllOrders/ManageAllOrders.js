@@ -2,38 +2,68 @@ import React, { useState, useEffect } from "react";
 import { Table } from "react-bootstrap";
 
 const ManageAllOrders = () => {
-  const [allOrder, setAllOrder] = useState([]);
+  // const [allOrder, setAllOrder] = useState([]);
+  const [myOrder, setMyOrder] = useState()
 
   useEffect(() => {
     fetch("http://localhost:5000/orders")
       .then((res) => res.json())
       .then((data) => {
-        setAllOrder(data);
+        setMyOrder(data);
       });
-  }, []);
+  }, [myOrder]);
+
+
+  // delete all orders
+
+
+  const handleDeleteAll = (id) => {
+    const url = `http://localhost:5000/deleteOrder/${id}`;
+    fetch(url, {
+      method: "DELETE",
+      
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount) {
+          window.confirm("Delete Confirm...???");
+          const remaining = myOrder.filter((orders) => orders._id !== id);
+          setMyOrder(remaining);
+
+          
+        }
+      });
+  };
+
+
   return (
     <div>
-      <h3 className="text-success pt-3">Total Order: {allOrder?.length}</h3>
+      <h3 className="text-success pt-3">Total Order: {myOrder?.length}</h3>
       <Table responsive container-fluid bordered hover variant="dark">
         <thead>
           <tr>
             <th>#</th>
             <th>Client Name</th>
-            <th>Address</th>
+            <th>Email</th>
             <th>Phone Number</th>
-            {/* <th>Order Cancel</th> */}
+            <th>Delete order</th>
           </tr>
         </thead>
         <tbody>
-          {allOrder?.map((allOrders, index) => (
-            <tr>
+          {myOrder?.map((allOrders, index) => (
+            <tr key={index}>
               <td>#</td>
               <td>{allOrders?.name}</td>
-              <td>{allOrders?.address}</td>
+              <td>{allOrders?.email}</td>
               <td>{allOrders?.phone}</td>
-              {/* <td>
-                               <button onClick={()=>handleDelete(order?._id)} className="bg-danger text-white border rounded-3">cancel</button>
-                            </td> */}
+              <td>
+              <button
+                  onClick={() => handleDeleteAll(allOrders?._id)}
+                  className="bg-danger text-white border rounded-3"
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>

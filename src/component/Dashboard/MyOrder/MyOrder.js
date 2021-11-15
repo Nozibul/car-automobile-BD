@@ -18,8 +18,7 @@ const MyOrder = () => {
     const url = `http://localhost:5000/deleteOrder/${id}`;
     fetch(url, {
       method: "DELETE",
-      headers:{'content-type':'application/json'},
-      body: JSON.stringify(id)
+      
     })
       .then((res) => res.json())
       .then((data) => {

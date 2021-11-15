@@ -26,8 +26,8 @@ const UserReview = () => {
                   <Rating
                     readonly
                     initialRating={reviews.rating}
-                    emptySymbol="far fa-star rating-color"
                     fullSymbol="fas fa-star rating-color"
+                    emptySymbol="far fa-star rating-color"
                   ></Rating>
                 </div>
               </div>
