@@ -112,7 +112,7 @@
         setIsLoading(true)
         signOut(auth)
         .then(() => {
-            setError('')
+            setError('');
           }).catch((error) => {
             setError(error.message);
           })

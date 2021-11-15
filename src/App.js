@@ -45,10 +45,10 @@ function App() {
             <Header />
             <PlaceOrder />
          </PrivateRoute>
-          <Route  path="/dashboard">
+          <PrivateRoute  path="/dashboard">
              <Header />
              <Dashboard></Dashboard>
-          </Route> 
+          </PrivateRoute> 
             
         </Switch>
       </Router>
