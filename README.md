@@ -18,26 +18,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * Users can complete her/his payment using online payment .
 
-* Users can complete her/his payment using online payment .
 
 ## Technology Used This Project
 ### Font-end
 
-1.React js
+* React js
 
-2.React Bootstrap
+* React Bootstrap
 
-3.React Router
+* React Router
 
-4.Firebase Authentication
+* Firebase Authentication
 
 ### Back-end
 
-Node js
+* Node js
 
-Express js
+* Express js
 
-MongoDB
+* MongoDB
 
 
 ### `npm start`
