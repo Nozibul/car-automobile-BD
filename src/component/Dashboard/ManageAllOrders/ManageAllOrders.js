@@ -16,7 +16,6 @@ const ManageAllOrders = () => {
 
   // delete all orders
 
-
   const handleDeleteAll = (id) => {
     const url = `https://rocky-fjord-43160.herokuapp.com/deleteOrder/${id}`;
     fetch(url, {

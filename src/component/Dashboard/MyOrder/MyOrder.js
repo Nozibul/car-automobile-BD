@@ -45,7 +45,7 @@ const MyOrder = () => {
         </thead>
         <tbody>
           {myOrder?.map((order, index) => (
-            <tr>
+            <tr key={index}>
               <td>#</td>
               <td>{order?.name}</td>
               <td>{order?.address}</td>
