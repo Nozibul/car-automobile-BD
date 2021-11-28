@@ -7,7 +7,10 @@ const Products = () => {
    useEffect(()=>{
        fetch('https://rocky-fjord-43160.herokuapp.com/products')
        .then(res=>res.json())
-       .then(data=>setProducts(data))
+       .then(data=>{
+           const reverseData = data.reverse();
+           setProducts(reverseData)
+       })
    },[])
     return (
         <div className="container-fluid mt-5">
