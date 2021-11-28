@@ -19,7 +19,7 @@ const Contact = () => {
               <h5 className="card-title">Phone Number</h5>
               <p className="card-text">
                 {" "}
-                +0025655454 <br /> +8007227227
+                +002565545<br /> +8007227227
               </p>
             </div>
           </div>
