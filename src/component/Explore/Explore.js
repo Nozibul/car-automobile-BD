@@ -18,6 +18,9 @@ const Explore = () => {
           {" "}
           More <span className="bd-title">CAR's</span> Collection
         </h1>
+         <div>
+           <input type="text" placeholder="search car"></input>
+         </div>
         <div className="row pb-5">
           {explores?.map((explore, index) => (
             <div className="col-lg-4 col-md-6 col-sm-12" key={index}>
