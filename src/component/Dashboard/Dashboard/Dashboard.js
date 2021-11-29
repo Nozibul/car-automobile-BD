@@ -3,6 +3,7 @@ import { Switch, Link, useRouteMatch } from "react-router-dom";
 import "./dashboard.css";
 import MyOrder from "../MyOrder/MyOrder";
 import Review from "../Review/Review";
+import Comment from "../Comment/Comment";
 import Pay from "../Pay/Pay";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
@@ -11,6 +12,10 @@ import useAuth from "../../Hooks/useAuth";
 import { Button } from "react-bootstrap";
 import AdminRoute from "../../../shared/AdminRoute/AdminRoute";
 import LoginRoute from "../../../shared/LoginRoute/LoginRoute";
+import UserFeedback from "../UserFeedback/UserFeedback";
+import AddProduct from "../AddProduct/AddProduct";
+
+
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
   const { admin, logOut, user } = useAuth();
@@ -32,6 +37,9 @@ const Dashboard = () => {
                     </Link>
                     <Link to={`${url}/review`}>
                       <li className="dashboard-menu mt-3">Review</li>
+                    </Link>
+                    <Link to={`${url}/comment`}>
+                      <li className="dashboard-menu mt-3">personal Feedback</li>
                     </Link>
                     <Link to={`${url}/pay`}>
                       <li className="dashboard-menu mt-3">Pay</li>
@@ -58,6 +66,12 @@ const Dashboard = () => {
                     <Link to={`${url}/manageProducts`}>
                       <li className="dashboard-menu mt-3">Manage Products</li>
                     </Link>
+                    <Link to={`${url}/addProducts`}>
+                      <li className="dashboard-menu mt-3">Add Products</li>
+                    </Link>
+                    <Link to={`${url}/feedback`}>
+                      <li className="dashboard-menu mt-3">User Feedback</li>
+                    </Link>
                     {user?.email && (
                       <Button className="btn-login mt-5" onClick={logOut}>
                         Logout
@@ -68,10 +82,14 @@ const Dashboard = () => {
               )}
             </div>
           </div>
+
           <div className="col-md-9">
             <Switch>
               <LoginRoute exact path={`${path}/review`}>
                 <Review></Review>
+              </LoginRoute>
+              <LoginRoute exact path={`${path}/comment`}>
+                <Comment></Comment>
               </LoginRoute>
               <LoginRoute path={`${path}/myOrder`}>
                 <MyOrder></MyOrder>
@@ -87,6 +105,12 @@ const Dashboard = () => {
               </AdminRoute>
               <AdminRoute exact path={`${path}/manageProducts`}>
                 <ManageProducts />
+              </AdminRoute>
+              <AdminRoute exact path={`${path}/addProducts`}>
+                <AddProduct />
+              </AdminRoute>
+              <AdminRoute path={`${path}/feedback`}>
+                <UserFeedback></UserFeedback>
               </AdminRoute>
             </Switch>
           </div>

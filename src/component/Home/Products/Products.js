@@ -14,7 +14,7 @@ const Products = () => {
    },[])
     return (
         <div className="container-fluid mt-5">
-              <h1 className="fw-bolder text-center" style={{color:"green"}}> LUXURY <span className="bd-title">CAR's</span></h1>
+              <h1 className="fw-bolder text-center" style={{color:"green"}}> Latest <span className="bd-title">Collection</span></h1>
             <div className="row pb-5">
                     {
                             products?.slice(0, 6).map((product, index) => <Product

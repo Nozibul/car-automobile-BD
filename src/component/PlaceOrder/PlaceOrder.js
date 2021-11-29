@@ -8,6 +8,8 @@ const PlaceOrder = () => {
     const { id} = useParams();
     const {user} = useAuth()
 
+  const orderDate = new Date().toLocaleDateString();
+
     const [details, setDetails] = useState([])
 
     useEffect(()=>{
@@ -72,7 +74,7 @@ const PlaceOrder = () => {
            <div className=" col-lg-4 add-order">
             <h4 className="text-center fs-bolder text-white p-3">Purchase</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input defaultValue={user.displayName} {...register("name", { required: true })} placeholder="your name" />
+                <input defaultValue={orderDate} {...register("date", { required: true })} placeholder="order Date" />
                 <input defaultValue={user.email}{...register("email", { required: true })} placeholder="email" />
                 <input  {...register("address", { required: true})} placeholder="your address" />
                 <input type="number" {...register("phone")} placeholder="phone number" />

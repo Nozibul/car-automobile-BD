@@ -26,7 +26,7 @@ const Review = () => {
   return (
     <div className="add-order">
       <h4 className="text-center fs-bolder text-white p-3">
-        Please Your Comment
+        Review Please
       </h4>
 
       <form onSubmit={handleSubmit(onSubmit)}>

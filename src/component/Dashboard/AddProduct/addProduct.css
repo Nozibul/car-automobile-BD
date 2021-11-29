@@ -1,0 +1,35 @@
+.add-product{
+
+    background-color: rgb(161, 163, 51);
+    padding: 15px;
+    border-radius: 10px;
+    
+
+   
+}
+.add-product form{
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+ .add-product form input {
+     margin-top: 7px;
+     width: 85%;
+     border-radius: 10px;
+     padding: 7px;
+     border: none;
+     
+ }
+ .place-btn{
+     background-color: rgb(10, 137, 139);
+     color: white;
+     font-weight: 700;
+     letter-spacing: 1.5;
+
+ }
+ .place-btn:hover{
+     background-color: rgb(202, 114, 6);
+     color: white;
+     font-weight: 700;
+     letter-spacing: 1.5;
+ }
